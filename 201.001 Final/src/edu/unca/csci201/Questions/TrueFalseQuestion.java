@@ -4,10 +4,23 @@ import edu.unca.csci201.Question;
 
 public class TrueFalseQuestion implements Question{
 boolean isTrue;
+String text = "";
+
+	public TrueFalseQuestion(String text) {
+		this.text = text;
+		
+		if (text.charAt(0) == '#') {
+			this.text = this.text.substring(1);
+			this.isTrue = true;
+		} else {
+			this.isTrue = false;
+		}
+		
+	}
+
 	@Override
 	public String getTheQuestionText() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.text;
 	}
 
 	@Override

@@ -3,16 +3,17 @@ package edu.unca.csci201.Questions;
 import edu.unca.csci201.Question;
 
 public class MultipleChoiceQuestion implements Question{
-
+	String text = "";
 	String[] answers;
 	String correctAnswer = "";
 	
-	public void giveAnswers(String ... strings ) {
+	public MultipleChoiceQuestion(String text, String ... strings ) {
+		this.text = text;
 		int a = strings.length;
 		for (int i = 0; i < a; i++) {
 			answers[i] = strings[i];
 		}
-		
+
 		setCorrectAnswer();
 	}
 	
@@ -24,16 +25,15 @@ public class MultipleChoiceQuestion implements Question{
 			}
 		}
 	}
-	
-	
+
+
 	@Override
 	public String getTheQuestionText() {
-		String text = "";
 		
 			for(int i = 0; i < answers.length; i++) {
-				text = "\n"+answers[i];
+				text = text+"\n"+answers[i];
 			}
-		
+
 		return text;
 	}
 
