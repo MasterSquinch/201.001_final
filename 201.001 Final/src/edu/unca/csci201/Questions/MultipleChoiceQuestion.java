@@ -3,6 +3,7 @@ package edu.unca.csci201.Questions;
 import edu.unca.csci201.Question;
 
 public class MultipleChoiceQuestion implements Question{
+	boolean isAdded = false;
 	String text = "";
 	String[] answers;
 	String correctAnswer = "";
