@@ -67,8 +67,20 @@ public class QuizTime {
 	}
 				    
 
-public static int getSectionLength(Question[] s){
-	return s.length;
+public static int getSectionLength(String s){
+	int l = 0;
+	switch (s) {
+		case "se1":
+			int l = se1.length;
+			break;
+		case "se2":
+			int l = se2.length;
+			break;
+		case "se3":
+			int l = se3.length;
+			break;
+	}	
+	return l;
 }
 	
  public static void main(String[] args) {
