@@ -65,6 +65,11 @@ public class QuizTime {
 		}
 			
 	}
+				    
+
+public static int getSectionLength(Question[] s){
+	return s.length;
+}
 	
  public static void main(String[] args) {
 	 Quiz quiz = new Quiz();
