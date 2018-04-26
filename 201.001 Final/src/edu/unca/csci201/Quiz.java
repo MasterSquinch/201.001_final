@@ -8,14 +8,6 @@ import edu.unca.csci201.Questions.*;
 public class Quiz {
 
 	Question[] qList;
-	Random rand = new Random();
-	int s1;
-	int s2;
-	int s3;
-	
-	public void generateSections() {
-		
-	}
 	
 	public void addQuestion(Question Q) {
 		
