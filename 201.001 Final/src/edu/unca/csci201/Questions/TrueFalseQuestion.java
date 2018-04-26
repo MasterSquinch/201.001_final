@@ -3,6 +3,7 @@ package edu.unca.csci201.Questions;
 import edu.unca.csci201.Question;
 
 public class TrueFalseQuestion implements Question{
+	boolean isAdded = false;
 boolean isTrue;
 String text = "";
 
