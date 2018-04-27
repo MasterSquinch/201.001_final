@@ -5,8 +5,8 @@ import java.util.Random;
 import edu.unca.csci201.Questions.*;
 
 public class QuizTime {
-	Random rand = new Random();
-	MultipleChoiceQuestion[] mcQuestions = {
+	public static Random rand = new Random();
+	public static MultipleChoiceQuestion[] mcQuestions = {
 			new MultipleChoiceQuestion("Surrealism was born out of which previous anti-war, anti-art movement, which flourished in the years after the first world war?", "Dodo","#Dada","Dandy"),
 			new MultipleChoiceQuestion("The first incarnation of the Surrealist Manifesto, published in 1924, described the movement as what?", "#Pure psychic automatism","Impure psychotic automatism","Pure stuff and nonsense","Pure fluff and bewilderment"),
 			new MultipleChoiceQuestion("Kierkegaard, which of the following is a viable solution to the absurd?", "#a leap of faith","physical suicide","philosophical suicide","acceptance"),
@@ -34,7 +34,7 @@ public class QuizTime {
 			new MultipleChoiceQuestion("Why before if. Again.", "Smashing.")
 			
 	};
-	TrueFalseQuestion[] tfQuestions = {
+	public static TrueFalseQuestion[] tfQuestions = {
 			new TrueFalseQuestion("Morality"),
 			new TrueFalseQuestion("#Integrity"),
 			new TrueFalseQuestion("Ellison is Visible"),
@@ -62,7 +62,7 @@ public class QuizTime {
 			new TrueFalseQuestion("#It is normal to drink a lot of water after the dog ate all of the sugar.")
 			
 	};
-	ShortAnswerQuestion[] saQuestions = {
+	public static ShortAnswerQuestion[] saQuestions = {
 			new ShortAnswerQuestion("How did Abraham find salvation?", "absurd", 1),
 			new ShortAnswerQuestion("Filling the void is what?", "eluding", 1),
 			new ShortAnswerQuestion("Rosencrantz and Guildenstein", "dead", 1),
@@ -95,11 +95,11 @@ public class QuizTime {
 	public static Question[] se2;
 	public static Question[] se3;
 	
-	int s1 = 0;
-	int s2 = 0;
-	int s3 = 0;
+	public static int s1 = 0;
+	public static int s2 = 0;
+	public static int s3 = 0;
 	
-	public void generateSections() {
+	public static void generateSections() {
 		for(s1 = 0; s1 <= 15; s1++){
 			int b = rand.nextInt(25);
 			if (mcQuestions[b].setAdded(false)){
@@ -160,7 +160,10 @@ public static int getSectionLength(String s){
 	
  public static void main(String[] args) {
 	 Quiz quiz = new Quiz();
-	 for (int i = 0; i < se1.length; i++){
+	 
+	 generateSections();
+	 
+	 for (int i = 0; i < se1.length+0; i++){
 		 quiz.addQuestion(se1[i]);
 	 }
 	 for (int i = se1.length; i < (se1.length + se2.length); i++ ){
