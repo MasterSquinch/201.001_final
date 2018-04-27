@@ -26,7 +26,7 @@ public class Quiz {
 		for (int i = 0; i < qList.size(); i++) {
 			System.out.println("\n" + qList.get(i).getTheQuestionText());
 			if (qList.get(i).isCorrectAnswer(in.nextLine())){
-				
+				break;
 			} else {
 				if (i < QuizTime.getSectionLength("se1")){
 					finalScore -= s1Weight;
