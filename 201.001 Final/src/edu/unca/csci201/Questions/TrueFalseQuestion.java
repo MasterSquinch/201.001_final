@@ -6,6 +6,7 @@ public class TrueFalseQuestion implements Question{
 	private boolean isAdded = false;
 boolean isTrue;
 String text = "";
+boolean isCorrect;
 
 	public TrueFalseQuestion(String text) {
 		this.text = text;
@@ -40,9 +41,14 @@ String text = "";
 
 	@Override
 	public String getCorrectAnswer() {
+		
+	if(!this.isCorrect){
 		if (this.isTrue == true)
 			return "true";
 		return "false";
+	}else {
+		return "You answered correctly.";
+	}
 		
 	}
 
