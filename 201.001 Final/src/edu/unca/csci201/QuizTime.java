@@ -105,7 +105,11 @@ public class QuizTime {
 	public static void generateSections() {
 		for(s1 = 0; s1 <= 10; s1++){
 			int b = rand.nextInt(25);
-			if (mcQuestions[b].isAdded() == false){
+			if (s1 == 0){
+				se1.add(mcQuestions[b]);
+				mcQuestions[b].setAdded(true);
+			} else
+			{if (mcQuestions[b].isAdded() == false){
 				if (rand.nextInt(15) > 0) {
 					se1.add(mcQuestions[b]);
 					mcQuestions[b].setAdded(true);
@@ -114,12 +118,16 @@ public class QuizTime {
 				}
 			} else {
 				break;
-			}
+			}}
 		}
 		
 		for(s2 = 11 - (10-se1.size()); s2 <= 18; s2++){
 			int b = rand.nextInt(25);
-			if (tfQuestions[b].isAdded() == false){
+			if (s2 == 11 - (10-se1.size())){
+				se2.add(tfQuestions[b]);
+				tfQuestions[b].setAdded(true);
+			} else
+			{if (tfQuestions[b].isAdded() == false){
 				if (rand.nextInt(15) > 0 ) {
 					se2.add(tfQuestions[b]);
 					tfQuestions[b].setAdded(true);
@@ -128,12 +136,16 @@ public class QuizTime {
 				}
 			} else {
 				break;
-			}
+			}}
 		}
 				    
 		for(s3 = 19 - (18-se2.size()); s3 <= 24; s3++){
 			int b = rand.nextInt(25);
-			if (saQuestions[b].isAdded() == false){
+			if (s3 == 19 - (18-se2.size())){
+				se3.add(saQuestions[b]);
+				saQuestions[b].setAdded(true);
+			} else
+			{if (saQuestions[b].isAdded() == false){
 				if (rand.nextInt(20) > 0) {
 					se3.add(saQuestions[b]);
 					saQuestions[b].setAdded(true);
@@ -142,7 +154,7 @@ public class QuizTime {
 				}
 			} else {
 			 break;
-			}
+			}}
 		}
 			
 	}

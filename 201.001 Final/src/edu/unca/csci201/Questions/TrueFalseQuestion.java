@@ -42,14 +42,9 @@ boolean isCorrect;
 	@Override
 	public String getCorrectAnswer() {
 		
-	if(!this.isCorrect){
 		if (this.isTrue == true)
 			return "true";
 		return "false";
-	}else {
-		return "You answered correctly.";
-	}
-		
 	}
 
 	public boolean isAdded() {
