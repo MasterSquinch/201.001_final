@@ -40,7 +40,7 @@ public class Quiz {
 				
 			}
 		}
-				System.out.println("The correct answers are:\n");
+				System.out.println("The correct answers for the answers which you have answered incorrectly are:\n");
 			for (int i = 0; i < qList.size(); i++){
 				System.out.println(i + ".) " + qList.get(i).getCorrectAnswer());
 			}
