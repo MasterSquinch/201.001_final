@@ -103,10 +103,10 @@ public class QuizTime {
 	public static int s3 = 0;
 	
 	public static void generateSections() {
-		for(s1 = 0; s1 <= 15; s1++){
+		for(s1 = 0; s1 <= 10; s1++){
 			int b = rand.nextInt(25);
 			if (mcQuestions[b].isAdded() == false){
-				if (rand.nextInt(4) > 0) {
+				if (rand.nextInt(15) > 0) {
 					se1.add(mcQuestions[b]);
 					mcQuestions[b].setAdded(true);
 				}else{
@@ -117,10 +117,10 @@ public class QuizTime {
 			}
 		}
 		
-		for(s2 = 16 - (15-se1.size()); s2 <= 20; s2++){
+		for(s2 = 11 - (10-se1.size()); s2 <= 18; s2++){
 			int b = rand.nextInt(25);
 			if (tfQuestions[b].isAdded() == false){
-				if (rand.nextInt(4) > 0 ) {
+				if (rand.nextInt(15) > 0 ) {
 					se2.add(tfQuestions[b]);
 					tfQuestions[b].setAdded(true);
 				}else{
@@ -131,10 +131,10 @@ public class QuizTime {
 			}
 		}
 				    
-		for(s3 = 21 - (20-se2.size()); s3 <= 24; s3++){
+		for(s3 = 19 - (18-se2.size()); s3 <= 24; s3++){
 			int b = rand.nextInt(25);
 			if (saQuestions[b].isAdded() == false){
-				if (rand.nextInt(2) > 0) {
+				if (rand.nextInt(20) > 0) {
 					se3.add(saQuestions[b]);
 					saQuestions[b].setAdded(true);
 				}else{
