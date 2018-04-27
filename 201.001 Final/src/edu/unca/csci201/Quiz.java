@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import edu.unca.csci201.Questions.*;
+// import edu.unca.csci201.Questions.*;
 
 public class Quiz {
 	ArrayList<Question> qList = new ArrayList<Question>();
@@ -14,14 +14,17 @@ public class Quiz {
 	}
 	
 	public double giveQuiz() {
+		Random rand = new Random();
 		Scanner in = new Scanner(System.in);
 		double finalScore = 0;
-		double s1Weight = (QuizTime.getSectionLength("se1") * 100 ) / qList.size();
-		double s2Weight = (QuizTime.getSectionLength("se2") * 100 ) / qList.size();
-		double s3Weight = (QuizTime.getSectionLength("se3") * 100 ) / qList.size();
+		double s1Weight = (QuizTime.getSectionLength("se1") * 100 ) / qList.size() + 1;
+		double s2Weight = (QuizTime.getSectionLength("se2") * 100 ) / qList.size() + 1;
+		double s3Weight = (QuizTime.getSectionLength("se3") * 100 ) / qList.size() + 1;
+		
+		System.out.println("Welcome to the Quiz to End All Quizzes- where your answers nor your score may have no meaning (or not!)\n\n");
 		
 		for (int i = 0; i < qList.size(); i++) {
-			System.out.println(qList.get(i).getTheQuestionText());
+			System.out.println("\n" + qList.get(i).getTheQuestionText());
 			if (qList.get(i).isCorrectAnswer(in.nextLine())){
 				if (i < QuizTime.getSectionLength("se1")){
 					finalScore += s1Weight;
@@ -40,7 +43,7 @@ public class Quiz {
 				System.out.println(i + ".) " + qList.get(i).getCorrectAnswer());
 			}
 				
-			System.out.println("Your final score is " + finalScore + "/ 100");
+			System.out.println("Your final score is " + finalScore + "/ " + rand.nextInt(1000)+1);
 				
 		in.close();
 		return finalScore;

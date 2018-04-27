@@ -1,8 +1,11 @@
 package edu.unca.csci201;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-import edu.unca.csci201.Questions.*;
+import edu.unca.csci201.Questions.MultipleChoiceQuestion;
+import edu.unca.csci201.Questions.ShortAnswerQuestion;
+import edu.unca.csci201.Questions.TrueFalseQuestion;
 
 public class QuizTime {
 	public static Random rand = new Random();
@@ -21,7 +24,7 @@ public class QuizTime {
 			new MultipleChoiceQuestion("Which of these artists was NOT directly involved in the surrealist movement?", "Frida Khalo","Joan Miró","René Magritte","#Pablo Picasso "),
 			new MultipleChoiceQuestion("The London International Surrealist exhibition of 1936 was attended by Salvador Dalí wearing which eyebrow-raising costume?", "A tutu","BDSM gear","#A diving suit","A bear suit"),
 			new MultipleChoiceQuestion("The first edition of the Principia Discordia was printed using what?", "Woodblock on cloth, China circa 220 A.D.","Ceramic movable-type","#Jim Garrison's Xerox printer"),
-			new MultipleChoiceQuestion("?", "","# ", "", ""),
+			new MultipleChoiceQuestion("?", " ","# ", " ", " "),
 			new MultipleChoiceQuestion("Writer and philosopher Georges Bataille, who fell out with the surrealists early on, once wrote an essay entitled what?", "#The Solar Anus","The Solar Plexus","The Solar System","The Solar Ballet"),
 			new MultipleChoiceQuestion("Is it normal to jump out of a car while the driver is still driving?", "yes","#perfectly","do it","no u"),
 			new MultipleChoiceQuestion("The line fomrs on the", "left","right","dot"),
@@ -91,9 +94,9 @@ public class QuizTime {
 			
 	};
 	
-	public static Question[] se1;
-	public static Question[] se2;
-	public static Question[] se3;
+	public static ArrayList<MultipleChoiceQuestion> se1 = new ArrayList<MultipleChoiceQuestion>();
+	public static ArrayList<TrueFalseQuestion> se2 = new ArrayList<TrueFalseQuestion>();
+	public static ArrayList<ShortAnswerQuestion> se3 = new ArrayList<ShortAnswerQuestion>();
 	
 	public static int s1 = 0;
 	public static int s2 = 0;
@@ -102,40 +105,43 @@ public class QuizTime {
 	public static void generateSections() {
 		for(s1 = 0; s1 <= 15; s1++){
 			int b = rand.nextInt(25);
-			if (mcQuestions[b].setAdded(false)){
+			if (mcQuestions[b].isAdded() == false){
 				if (rand.nextInt(4) > 0) {
-					se1[s1] = mcQuestions[b];	
+					se1.add(mcQuestions[b]);
+					mcQuestions[b].setAdded(true);
 				}else{
-					return;
+					break;
 				}
 			} else {
-			 return;
+				break;
 			}
 		}
 		
-		for(s2 = 16 - (15-se1.length); s2 <= 20; s2++){
+		for(s2 = 16 - (15-se1.size()); s2 <= 20; s2++){
 			int b = rand.nextInt(25);
-			if (tfQuestions[b].setAdded(false)){
+			if (tfQuestions[b].isAdded() == false){
 				if (rand.nextInt(4) > 0 ) {
-					se2[s2] = tfQuestions[b];	
+					se2.add(tfQuestions[b]);
+					tfQuestions[b].setAdded(true);
 				}else{
-					return;
+					break;
 				}
 			} else {
-			 return;
+				break;
 			}
 		}
 				    
-		for(s3 = 21 - (20-se2.length); s3 <= 24; s3++){
+		for(s3 = 21 - (20-se2.size()); s3 <= 24; s3++){
 			int b = rand.nextInt(25);
-			if (saQuestions[b].setAdded(false)){
+			if (saQuestions[b].isAdded() == false){
 				if (rand.nextInt(2) > 0) {
-					se3[s3] = saQuestions[b];	
+					se3.add(saQuestions[b]);
+					saQuestions[b].setAdded(true);
 				}else{
-					return;
+					break;
 				}
 			} else {
-			 return;
+			 break;
 			}
 		}
 			
@@ -146,13 +152,13 @@ public static int getSectionLength(String s){
 	int l = 0;
 	switch (s) {
 		case "se1":
-			l = se1.length;
+			l = se1.size();
 			break;
 		case "se2":
-			l = se2.length;
+			l = se2.size();
 			break;
 		case "se3":
-			l = se3.length;
+			l = se3.size();
 			break;
 	}	
 	return l;
@@ -163,14 +169,14 @@ public static int getSectionLength(String s){
 	 
 	 generateSections();
 	 
-	 for (int i = 0; i < se1.length+0; i++){
-		 quiz.addQuestion(se1[i]);
+	 for (int i = 0; i < se1.size(); i++){
+		 quiz.addQuestion(se1.get(i));
 	 }
-	 for (int i = se1.length; i < (se1.length + se2.length); i++ ){
-		 quiz.addQuestion(se2[i]);
+	 for (int i =0 ; i < se2.size(); i++ ){
+		 quiz.addQuestion(se2.get(i));
 	 }
-	 for (int i = (se1.length + se2.length); i < ((se1.length + se2.length) + se3.length); i++ ){
-		 quiz.addQuestion(se3[i]);
+	 for (int i = 0; i < se3.size(); i++ ){
+		 quiz.addQuestion(se3.get(i));
 	 }
 	 
 	 

@@ -11,15 +11,17 @@ public class MultipleChoiceQuestion implements Question{
 	public MultipleChoiceQuestion(String text, String ... strings ) {
 		this.text = text;
 		int a = strings.length;
+		String[] tanswers = new String[a];
 		for (int i = 0; i < a; i++) {
-			answers[i] = strings[i];
+			tanswers[i] = strings[i];
 		}
 
+		answers = tanswers;
 		setCorrectAnswer();
 	}
 	
 	public void setCorrectAnswer() {
-		for (int i = answers.length - 1; i >= 0; i--) {
+		for (int i = 0; i < answers.length; i++) {
 			if (answers[i].charAt(0) == '#') {
 				answers[i] = answers[i].substring(1);
 				correctAnswer = answers[i];
