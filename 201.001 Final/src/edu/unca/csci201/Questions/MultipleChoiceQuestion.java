@@ -3,7 +3,7 @@ package edu.unca.csci201.Questions;
 import edu.unca.csci201.Question;
 
 public class MultipleChoiceQuestion implements Question{
-	boolean isAdded = false;
+	private boolean isAdded = false;
 	String text = "";
 	String[] answers;
 	String correctAnswer = "";
@@ -49,6 +49,15 @@ public class MultipleChoiceQuestion implements Question{
 	@Override
 	public String getCorrectAnswer() {
 		return correctAnswer;
+	}
+
+	public boolean isAdded() {
+		return isAdded;
+	}
+
+	public boolean setAdded(boolean isAdded) {
+		this.isAdded = isAdded;
+		return isAdded;
 	}
 
 }

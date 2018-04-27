@@ -1,19 +1,22 @@
 package edu.unca.csci201.Questions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import edu.unca.csci201.Question;
 
 public class ShortAnswerQuestion implements Question{
-	boolean isAdded = false;
+	private boolean isAdded = false;
 	String keyphrase = "";
-	String correctAnswer = "";
+	String correctAnswer = "This is a open ended question, graded on both a qualitive and quantitive basis.";
 	String text = "";
 	int threshold;
 
 	
-	public ShortAnserQuestion(String text, String keyphrase, int threshold) {
+	public ShortAnswerQuestion(String text, String keyphrase, int threshold) {
 		this.text = text;
 		this.keyphrase = keyphrase;
-		this.threshshold = threshold;
+		this.threshold = threshold;
 	}
 	
 	@Override
@@ -37,6 +40,15 @@ public class ShortAnswerQuestion implements Question{
 	@Override
 	public String getCorrectAnswer() {
 		return correctAnswer;
+	}
+
+	public boolean isAdded() {
+		return isAdded;
+	}
+
+	public boolean setAdded(boolean isAdded) {
+		this.isAdded = isAdded;
+		return isAdded;
 	}
 
 }

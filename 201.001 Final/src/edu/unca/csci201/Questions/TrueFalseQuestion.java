@@ -3,7 +3,7 @@ package edu.unca.csci201.Questions;
 import edu.unca.csci201.Question;
 
 public class TrueFalseQuestion implements Question{
-	boolean isAdded = false;
+	private boolean isAdded = false;
 boolean isTrue;
 String text = "";
 
@@ -44,5 +44,14 @@ String text = "";
 			return "true";
 		return "false";
 		
+	}
+
+	public boolean isAdded() {
+		return isAdded;
+	}
+
+	public boolean setAdded(boolean isAdded) {
+		this.isAdded = isAdded;
+		return isAdded;
 	}
 }
