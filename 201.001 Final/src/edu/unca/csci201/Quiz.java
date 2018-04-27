@@ -16,26 +16,28 @@ public class Quiz {
 	public double giveQuiz() {
 		Random rand = new Random();
 		Scanner in = new Scanner(System.in);
-		double finalScore = 0;
-		double s1Weight = (QuizTime.getSectionLength("se1") * 100 ) / qList.size() + 1;
-		double s2Weight = (QuizTime.getSectionLength("se2") * 100 ) / qList.size() + 1;
-		double s3Weight = (QuizTime.getSectionLength("se3") * 100 ) / qList.size() + 1;
+		double finalScore = 1000;
+		double s1Weight = (QuizTime.getSectionLength("se1") * 1000 ) / qList.size() + 1;
+		double s2Weight = (QuizTime.getSectionLength("se2") * 1000 ) / qList.size() + 1;
+		double s3Weight = (QuizTime.getSectionLength("se3") * 1000 ) / qList.size() + 1;
 		
 		System.out.println("Welcome to the Quiz to End All Quizzes- where your answers nor your score may have no meaning (or not!)\n\n");
 		
 		for (int i = 0; i < qList.size(); i++) {
 			System.out.println("\n" + qList.get(i).getTheQuestionText());
 			if (qList.get(i).isCorrectAnswer(in.nextLine())){
+				
+			} else {
 				if (i < QuizTime.getSectionLength("se1")){
-					finalScore += s1Weight;
+					finalScore -= s1Weight;
 				} else
 				if (QuizTime.getSectionLength("se1") <= i && i < QuizTime.getSectionLength("se2")){
-					finalScore += s2Weight;
+					finalScore -= s2Weight;
 				} else
 				if (QuizTime.getSectionLength("se3") <= i){
-					finalScore += s3Weight;
+					finalScore -= s3Weight;
 				}
-			} else {
+				
 			}
 		}
 				System.out.println("The correct answers are:\n");
