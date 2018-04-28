@@ -28,7 +28,7 @@ public class Quiz {
 			" K-LOCS",	" G-LOCS",	" micromorts",	" ticks",
 			" Centipawns",	" Big Macs",	" Mars Bars",	" parsecs",
 			" parcels",	" Mother Cows",	"garns",	" dols",
-			" scovilles",	"",	" Eriangs",	" crabs",
+			" scovilles",	" feats",	" Eriangs",	" crabs",
 			" firkins",	" furlongs/fortnites",	" bloits",	"ngogn",
 			" blintz",	"portzebies",	" sagans",	" attoparsecs",	" beard-seconds",
 			" mickeys",	" Six Pack Jimmies",	" Smoots",	" Sheffies",
