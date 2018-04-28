@@ -36,8 +36,9 @@ public class QuizTime {
 			new MultipleChoiceQuestion("U want a man for 2 nights. \nPls. \nDon't mind u post this offer pub lically. \nU have no shame. \nThis is such a vulgar offer. \nI think u should marry to satisfy yourself?", "tru","sure","tru tru","#abso    luteley"),
 			new MultipleChoiceQuestion("Why before if. Again.", "#Smashing."),
 			new MultipleChoiceQuestion("If Dwayne Johnson is studying his family history, is it called genealogy or geology?", "#geneaology", "geology", "neither: Dwayne Johnson isn't people."),
-			new MultipleChoiceQuestion("Why are celebrity deaths always in the news, but rarely celebrity births?", "Because there is a sucker born every minute, but rarely a star.", "#Because they stopped allowing TMZ to sit in on celebrity births, for a multitude of reasons.", "Everyone stopped caring after Kanye.", "Because while YOLO, births are less remarkable.")
-			
+			new MultipleChoiceQuestion("Why are celebrity deaths always in the news, but rarely celebrity births?", "Because there is a sucker born every minute, but rarely a star.", "#Because they stopped allowing TMZ to sit in on celebrity births, for a multitude of reasons.", "Everyone stopped caring after Kanye.", "Because while YOLO, births are less remarkable."),
+			new MultipleChoiceQuestion("Who killed Hannibal?", "#?", "?", "?"),
+			new MultipleChoiceQuestion("Where'd you get your front teeth?", "#The Gap"),
 	};
 	public static TrueFalseQuestion[] tfQuestions = {
 			new TrueFalseQuestion("Morality"),
@@ -68,6 +69,7 @@ public class QuizTime {
 			new TrueFalseQuestion("#Hotdogs are Sandwiches"),
 			new TrueFalseQuestion("#You can use the formula 'y = mx + b' to measure the slope of the downward trajectory your life is currently taking."),
 			new TrueFalseQuestion("When your vision begins faltering, you can apply for Adult Supervision at your local optometrist to resolve the issue."),
+			new TrueFalseQuestion("#TIME TO DELIVER A PIZZA BALL"),
 			
 			
 	};
@@ -93,7 +95,7 @@ public class QuizTime {
 			new ShortAnswerQuestion("Who is one of the most well-known Saints Second Class", "Emperor Norton", 1),
 			new ShortAnswerQuestion("Engines O", "Rings and Astronauts", 1),
 			new ShortAnswerQuestion("How would you feel if all humans became effeminate sheep?", "wool", 2),
-			new ShortAnswerQuestion("How would one go about toasting a bird? Asking for a friend...", "love", 1),
+			new ShortAnswerQuestion("How would one go about toasting a bird? Asking for a friend...", "bird up", 1),
 			new ShortAnswerQuestion("Why do people avoid unpleasant situations?", "unpleasant", 1),
 			new ShortAnswerQuestion("If God is not bound by time as a byproduct of creating it, does He still experience sequentiality?", "keyphrase", 1),
 			new ShortAnswerQuestion("Why does this “front” like to send “messages” to let you know they’re watching, in the form of a question?", "shadow government", 1),
@@ -107,7 +109,9 @@ public class QuizTime {
 			new ShortAnswerQuestion("The first dog in space died of stress. Why?", "vacuums", 1),
 			new ShortAnswerQuestion("Why hasn't Ryan Gosling become Ryan Goose yet?", "career", 1),
 			new ShortAnswerQuestion("Why does a 2 pound coin only weigh .020 pounds?", "currency manipulation", 1),
-			new ShortAnswerQuestion("Why do people come back from Baby Changing Stations with the same baby?", " ", 0)
+			new ShortAnswerQuestion("Why do people come back from Baby Changing Stations with the same baby?", " ", 0),
+			new ShortAnswerQuestion("How did Jesus turn water into wine?", "blushed", 1),
+			new ShortAnswerQuestion("Dude, where'd you get your clothes?", "You know I went to ROSS!", 1),
 	};
 	
 	public static ArrayList<MultipleChoiceQuestion> se1 = new ArrayList<MultipleChoiceQuestion>();
@@ -120,7 +124,7 @@ public class QuizTime {
 	
 	public static void generateSections() {
 		for(s1 = 0; s1 <= 10; s1++){
-			int b = rand.nextInt(25);
+			int b = rand.nextInt(mcQuestions.length-1);
 			if (s1 == 0){
 				se1.add(mcQuestions[b]);
 				mcQuestions[b].setAdded(true);
@@ -138,7 +142,7 @@ public class QuizTime {
 		}
 		
 		for(s2 = 11 - (10-se1.size()); s2 <= 18; s2++){
-			int b = rand.nextInt(25);
+			int b = rand.nextInt(tfQuestions.length-1);
 			if (s2 == 11 - (10-se1.size())){
 				se2.add(tfQuestions[b]);
 				tfQuestions[b].setAdded(true);
@@ -156,7 +160,7 @@ public class QuizTime {
 		}
 				    
 		for(s3 = 19 - (18-se2.size()); s3 <= 24; s3++){
-			int b = rand.nextInt(25);
+			int b = rand.nextInt(mcQuestions.length-1);
 			if (s3 == 19 - (18-se2.size())){
 				se3.add(saQuestions[b]);
 				saQuestions[b].setAdded(true);

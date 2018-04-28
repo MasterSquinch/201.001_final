@@ -53,26 +53,39 @@ public class Quiz {
 		double s1Weight = (double) 45 / (double) QuizTime.getSectionLength("se1");
 		double s2Weight = (double) 10 / (double) QuizTime.getSectionLength("se2");
 		double s3Weight = (double) 45 / (double) QuizTime.getSectionLength("se3");
+		int s2Start = QuizTime.getSectionLength("se1") ;
+		int s3Start = QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2");
 		
 		System.out.println("Welcome to the Quiz to End All Quizzes- where your answers nor your score may have no meaning (or not!)\n");
-		System.out.println("The quiz consists of \n"+QuizTime.getSectionLength("se1")+" multiple choice questions, \n"+QuizTime.getSectionLength("se2")+" true-or-false question(s), and \n"+QuizTime.getSectionLength("se3")+" short answer questions, \nfor a total of "+qList.size()+" questions. \n\n Remember to keep track of them. They won't be labeled- although many will be fairly apparent.\n");
+		System.out.println("The quiz consists of \n"+QuizTime.getSectionLength("se1")+" multiple choice questions, \n"+QuizTime.getSectionLength("se2")+" true-or-false question(s), and \n"+QuizTime.getSectionLength("se3")+" short answer questions, \nfor a total of "+qList.size()+" questions.");
 		
 		for (int i = 0; i < qList.size(); i++) {
-			System.out.println("\n" + i + " .) " + qList.get(i).getTheQuestionText());
+			
+			if (i == 0) {
+				System.out.println("\n\n *** MUTLIPLE CHOICE SECTION *** \n Be sure to type your answer verbatim- answers ARE case sensitive. Do not type A, 1, or any derivative thereof.\n\n");
+			} else if (i == s2Start) {
+				System.out.println("\n\n *** TRUE OR FALSE SECTION *** \n Tyep in the word true, or false. Case doesn't matter. This is the lowest weighted section, so don't sweat it.\n\n");
+			} else if ( i == s3Start) {
+				System.out.println("\n\n *** SHORT ANSWER / ESSAY SECTION *** \n This is likely the shortest section, with the longest answers. Don't quote me on that however: the list of questions kind of does what it wants. \nAt any rate, this section is probably the highest weighted, so answer wisely. \n\n Probably. \n\n");
+			}
+
+			System.out.println("\n" + (i+1) + " .) " + qList.get(i).getTheQuestionText());
+			
+			
 			if (qList.get(i).isCorrectAnswer(in.nextLine())){
 				if (i < QuizTime.getSectionLength("se1")){
 					finalScore = finalScore + s1Weight;
 				} else
-				if (QuizTime.getSectionLength("se1") <= i && i < QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2")){
+				if (s2Start <= i && i < QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2")){
 					finalScore = finalScore + s2Weight;
 				} else
-				if (QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2") <= i && i <= QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2") + QuizTime.getSectionLength("se3")  ){
+				if (s3Start <= i && i <= QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2") + QuizTime.getSectionLength("se3")  ){
 					finalScore = finalScore + s3Weight;
 				}
 			} else {
 			}
 		}
-				System.out.println("The correct answers for the answers which you have answered incorrectly as well as the correct answers you have correctly provided are:\n");
+				System.out.println("\n\n\n\n****RESULTS*****\nThe correct answers for the answers which you have answered incorrectly as well as the correct answers you have correctly provided are:\n");
 			for (int i = 0; i < qList.size(); i++){
 				System.out.println(i + ".) " + qList.get(i).getCorrectAnswer());
 			}
