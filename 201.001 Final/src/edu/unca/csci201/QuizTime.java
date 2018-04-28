@@ -33,8 +33,10 @@ public class QuizTime {
 			new MultipleChoiceQuestion("I go from house to house every week due to a messy divorce, and I was wondering if a hedgehog or a chincilla would serve me better in this situation?", "#hedgehog","chincilla"),
 			new MultipleChoiceQuestion("Man Ray's photograph Portemanteau (1920) famously posed a woman as which domestic object?", "A table","#A coat stand","A dishwasher","A tea trolley"),
 			new MultipleChoiceQuestion("On a scale of 1-10, how much derailment is acceptable in a campaign?", "1","2","#3","or 8 full Hendersons"),
-			new MultipleChoiceQuestion("U want a man for 2 nights. \nPls. \nDon't mind u post this offer pub lically. \nU have no shame. \nThis is such a vulgar offer. \nI think u should marry to satisfy yourself?", "tru","sure","tru tru","abso    luteley"),
-			new MultipleChoiceQuestion("Why before if. Again.", "#Smashing.")
+			new MultipleChoiceQuestion("U want a man for 2 nights. \nPls. \nDon't mind u post this offer pub lically. \nU have no shame. \nThis is such a vulgar offer. \nI think u should marry to satisfy yourself?", "tru","sure","tru tru","#abso    luteley"),
+			new MultipleChoiceQuestion("Why before if. Again.", "#Smashing."),
+			new MultipleChoiceQuestion("If Dwayne Johnson is studying his family history, is it called genealogy or geology?", "#geneaology", "geology", "neither: Dwayne Johnson isn't people."),
+			new MultipleChoiceQuestion("Why are celebrity deaths always in the news, but rarely celebrity births?", "Because there is a sucker born every minute, but rarely a star.", "#Because they stopped allowing TMZ to sit in on celebrity births, for a multitude of reasons.", "Everyone stopped caring after Kanye.", "Because while YOLO, births are less remarkable.")
 			
 	};
 	public static TrueFalseQuestion[] tfQuestions = {
@@ -62,7 +64,11 @@ public class QuizTime {
 			new TrueFalseQuestion("Addition of two numbers"),
 			new TrueFalseQuestion("#You lost the game."),
 			new TrueFalseQuestion("#Paradox"),
-			new TrueFalseQuestion("#It is normal to drink a lot of water after the dog ate all of the sugar.")
+			new TrueFalseQuestion("#It is normal to drink a lot of water after the dog ate all of the sugar."),
+			new TrueFalseQuestion("#Hotdogs are Sandwiches"),
+			new TrueFalseQuestion("#You can use the formula 'y = mx + b' to measure the slope of the downward trajectory your life is currently taking."),
+			new TrueFalseQuestion("When your vision begins faltering, you can apply for Adult Supervision at your local optometrist to resolve the issue."),
+			
 			
 	};
 	public static ShortAnswerQuestion[] saQuestions = {
@@ -91,7 +97,17 @@ public class QuizTime {
 			new ShortAnswerQuestion("Why do people avoid unpleasant situations?", "unpleasant", 1),
 			new ShortAnswerQuestion("If God is not bound by time as a byproduct of creating it, does He still experience sequentiality?", "keyphrase", 1),
 			new ShortAnswerQuestion("Why does this “front” like to send “messages” to let you know they’re watching, in the form of a question?", "shadow government", 1),
-			
+			new ShortAnswerQuestion("When do pigs fly?", " ", 0),
+			new ShortAnswerQuestion("Which movie, if any, would be greatly improved if turned into a musical?", " ", 0),
+			new ShortAnswerQuestion("If animals could talk, which would be the rudest?", "cat", 1),
+			new ShortAnswerQuestion("If you had to guess, how many mice would it take to kill an elephant? How would they do it?", " ", 0),
+			new ShortAnswerQuestion("In your opinion, what would be the worst Buy-One-Get-One-Free deal of all time?", " ", 0),
+			new ShortAnswerQuestion("What is the airspeed velocity of an unladen swallow?", "European", 1),
+			new ShortAnswerQuestion("Are you suggesting that coconuts migrate?", "carried", 1),
+			new ShortAnswerQuestion("The first dog in space died of stress. Why?", "vacuums", 1),
+			new ShortAnswerQuestion("Why hasn't Ryan Gosling become Ryan Goose yet?", "career", 1),
+			new ShortAnswerQuestion("Why does a 2 pound coin only weigh .020 pounds?", "currency manipulation", 1),
+			new ShortAnswerQuestion("Why do people come back from Baby Changing Stations with the same baby?", " ", 0)
 	};
 	
 	public static ArrayList<MultipleChoiceQuestion> se1 = new ArrayList<MultipleChoiceQuestion>();
