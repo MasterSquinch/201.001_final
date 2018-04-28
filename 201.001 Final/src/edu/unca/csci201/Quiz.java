@@ -64,7 +64,7 @@ public class Quiz {
 			if (i == 0) {
 				System.out.println("\n\n *** MUTLIPLE CHOICE SECTION *** \n Be sure to type your answer verbatim- answers ARE case sensitive. Do not type A, 1, or any derivative thereof.\n\n");
 			} else if (i == s2Start) {
-				System.out.println("\n\n *** TRUE OR FALSE SECTION *** \n Tyep in the word true, or false. Case doesn't matter. This is the lowest weighted section, so don't sweat it.\n\n");
+				System.out.println("\n\n *** TRUE OR FALSE SECTION *** \n Type in the word true, or false. Case doesn't matter. This is the lowest weighted section, so don't sweat it.\n\n");
 			} else if ( i == s3Start) {
 				System.out.println("\n\n *** SHORT ANSWER / ESSAY SECTION *** \n This is likely the shortest section, with the longest answers. Don't quote me on that however: the list of questions kind of does what it wants. \nAt any rate, this section is probably the highest weighted, so answer wisely. \n\n Probably. \n\n");
 			}

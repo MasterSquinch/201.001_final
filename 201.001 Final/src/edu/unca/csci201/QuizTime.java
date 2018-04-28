@@ -8,8 +8,8 @@ import edu.unca.csci201.Questions.ShortAnswerQuestion;
 import edu.unca.csci201.Questions.TrueFalseQuestion;
 
 public class QuizTime {
-	public static Random rand = new Random();
-	public static MultipleChoiceQuestion[] mcQuestions = {
+	private static Random rand = new Random();
+	private static MultipleChoiceQuestion[] mcQuestions = {
 			new MultipleChoiceQuestion("Surrealism was born out of which previous anti-war, anti-art movement, which flourished in the years after the first world war?", "Dodo","#Dada","Dandy"),
 			new MultipleChoiceQuestion("The first incarnation of the Surrealist Manifesto, published in 1924, described the movement as what?", "#Pure psychic automatism","Impure psychotic automatism","Pure stuff and nonsense","Pure fluff and bewilderment"),
 			new MultipleChoiceQuestion("Kierkegaard, which of the following is a viable solution to the absurd?", "#a leap of faith","physical suicide","philosophical suicide","acceptance"),
@@ -27,20 +27,20 @@ public class QuizTime {
 			new MultipleChoiceQuestion("?", " ","# ", " ", " "),
 			new MultipleChoiceQuestion("Writer and philosopher Georges Bataille, who fell out with the surrealists early on, once wrote an essay entitled what?", "#The Solar Anus","The Solar Plexus","The Solar System","The Solar Ballet"),
 			new MultipleChoiceQuestion("Is it normal to jump out of a car while the driver is still driving?", "yes","#perfectly","do it","no u"),
-			new MultipleChoiceQuestion("The line fomrs on the", "left","#right","dot"),
+			new MultipleChoiceQuestion("The line forms on the", "left","#right","dot"),
 			new MultipleChoiceQuestion("What happens in the most infamous scene from Un Chien Andalou directed by Luis Luis Buñuel? ", "The man's throat is cut","#The man's eyeball is sliced with a razor","The man is shot in the head","The man weeps tears of blood"),
 			new MultipleChoiceQuestion("Where should Mayakovsky go?", "Tiananmen Square","a land down under","#to the Pampushka","Burning Man"),
 			new MultipleChoiceQuestion("I go from house to house every week due to a messy divorce, and I was wondering if a hedgehog or a chincilla would serve me better in this situation?", "#hedgehog","chincilla"),
 			new MultipleChoiceQuestion("Man Ray's photograph Portemanteau (1920) famously posed a woman as which domestic object?", "A table","#A coat stand","A dishwasher","A tea trolley"),
 			new MultipleChoiceQuestion("On a scale of 1-10, how much derailment is acceptable in a campaign?", "1","2","#3","or 8 full Hendersons"),
-			new MultipleChoiceQuestion("U want a man for 2 nights. \nPls. \nDon't mind u post this offer pub lically. \nU have no shame. \nThis is such a vulgar offer. \nI think u should marry to satisfy yourself?", "tru","sure","tru tru","#abso    luteley"),
+			new MultipleChoiceQuestion("U want a man for 2 nights. \nPls. \nDon't mind u post this offer pub lically. \nU have no shame. \nThis is such a vulgar offer. \nI think u should marry to satisfy yourself?\n", "tru","sure","tru tru","#abso    luteley"),
 			new MultipleChoiceQuestion("Why before if. Again.", "#Smashing."),
 			new MultipleChoiceQuestion("If Dwayne Johnson is studying his family history, is it called genealogy or geology?", "#geneaology", "geology", "neither: Dwayne Johnson isn't people."),
 			new MultipleChoiceQuestion("Why are celebrity deaths always in the news, but rarely celebrity births?", "Because there is a sucker born every minute, but rarely a star.", "#Because they stopped allowing TMZ to sit in on celebrity births, for a multitude of reasons.", "Everyone stopped caring after Kanye.", "Because while YOLO, births are less remarkable."),
 			new MultipleChoiceQuestion("Who killed Hannibal?", "#?", "?", "?"),
 			new MultipleChoiceQuestion("Where'd you get your front teeth?", "#The Gap"),
 	};
-	public static TrueFalseQuestion[] tfQuestions = {
+	private static TrueFalseQuestion[] tfQuestions = {
 			new TrueFalseQuestion("Morality"),
 			new TrueFalseQuestion("#Integrity"),
 			new TrueFalseQuestion("Ellison is Visible"),
@@ -73,7 +73,7 @@ public class QuizTime {
 			
 			
 	};
-	public static ShortAnswerQuestion[] saQuestions = {
+	private static ShortAnswerQuestion[] saQuestions = {
 			new ShortAnswerQuestion("How did Abraham find salvation?", "absurd", 1),
 			new ShortAnswerQuestion("Filling the void is what?", "eluding", 1),
 			new ShortAnswerQuestion("Rosencrantz and Guildenstein", "dead", 1),
@@ -114,15 +114,15 @@ public class QuizTime {
 			new ShortAnswerQuestion("Dude, where'd you get your clothes?", "You know I went to ROSS!", 1),
 	};
 	
-	public static ArrayList<MultipleChoiceQuestion> se1 = new ArrayList<MultipleChoiceQuestion>();
-	public static ArrayList<TrueFalseQuestion> se2 = new ArrayList<TrueFalseQuestion>();
-	public static ArrayList<ShortAnswerQuestion> se3 = new ArrayList<ShortAnswerQuestion>();
+	private static ArrayList<MultipleChoiceQuestion> se1 = new ArrayList<MultipleChoiceQuestion>();
+	private static ArrayList<TrueFalseQuestion> se2 = new ArrayList<TrueFalseQuestion>();
+	private static ArrayList<ShortAnswerQuestion> se3 = new ArrayList<ShortAnswerQuestion>();
 	
-	public static int s1 = 0;
-	public static int s2 = 0;
-	public static int s3 = 0;
+	private static int s1 = 0;
+	private static int s2 = 0;
+	private static int s3 = 0;
 	
-	public static void generateSections() {
+	private static void generateSections() {
 		for(s1 = 0; s1 <= 10; s1++){
 			int b = rand.nextInt(mcQuestions.length-1);
 			if (s1 == 0){
