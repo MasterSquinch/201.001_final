@@ -42,7 +42,7 @@ public class MultipleChoiceQuestion implements Question{
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
-		if (answer == correctAnswer) {
+		if (answer.equals(correctAnswer)) {
 			return true;
 		}
 		return false;

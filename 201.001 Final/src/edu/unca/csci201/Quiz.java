@@ -17,26 +17,27 @@ public class Quiz {
 		Random rand = new Random();
 		Scanner in = new Scanner(System.in);
 		double finalScore = 0;
-		double s1Weight = (double) (QuizTime.getSectionLength("se1") * 100 ) / qList.size();
-		double s2Weight = (double) (QuizTime.getSectionLength("se2") * 100 ) / qList.size();
-		double s3Weight = (double) (QuizTime.getSectionLength("se3") * 100 ) / qList.size();
+		double s1Weight = (double) 45 / (double) QuizTime.getSectionLength("se1");
+		double s2Weight = (double) 10 / (double) QuizTime.getSectionLength("se2");
+		double s3Weight = (double) 45 / (double) QuizTime.getSectionLength("se3");
+		
+		System.out.println(QuizTime.getSectionLength("se1")+"\n"+s1Weight+"\n"+QuizTime.getSectionLength("se2")+"\n"+s2Weight+"\n"+QuizTime.getSectionLength("se3")+"\n"+s3Weight+"\n"+qList.size()+"\n");
 		
 		System.out.println("Welcome to the Quiz to End All Quizzes- where your answers nor your score may have no meaning (or not!)\n\n");
 		
 		for (int i = 0; i < qList.size(); i++) {
-			System.out.println("\n" + qList.get(i).getTheQuestionText());
+			System.out.println("\n" + i + " .) " + qList.get(i).getTheQuestionText());
 			if (qList.get(i).isCorrectAnswer(in.nextLine())){
 				if (i < QuizTime.getSectionLength("se1")){
-					finalScore += s1Weight;
+					finalScore = finalScore + s1Weight;
 				} else
-				if (QuizTime.getSectionLength("se1") <= i && i < QuizTime.getSectionLength("se2")){
-					finalScore += s2Weight;
+				if (QuizTime.getSectionLength("se1") <= i && i < QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2")){
+					finalScore = finalScore + s2Weight;
 				} else
-				if (QuizTime.getSectionLength("se3") <= i){
-					finalScore += s3Weight;
+				if (QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2") <= i && i <= QuizTime.getSectionLength("se1") + QuizTime.getSectionLength("se2") + QuizTime.getSectionLength("se3")  ){
+					finalScore = finalScore + s3Weight;
 				}
-			} else {	
-				
+			} else {
 			}
 		}
 				System.out.println("The correct answers for the answers which you have answered incorrectly as well as the correct answers you have correctly provided are:\n");
