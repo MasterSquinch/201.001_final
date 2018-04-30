@@ -4,10 +4,9 @@ import edu.unca.csci201.Question;
 
 public class TrueFalseQuestion implements Question{
 	private boolean isAdded = false;
-boolean isTrue;
-String text = "";
-boolean isCorrect;
-String answer = "";
+	private boolean isTrue;	
+	private String text = "";
+	private String answer = "";
 
 	public TrueFalseQuestion(String text) {
 		this.text = text;
@@ -28,7 +27,6 @@ String answer = "";
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
-		
 		this.answer = answer;
 		if (answer.equalsIgnoreCase("true") || answer.equalsIgnoreCase("false")) {
 		    boolean a = Boolean.valueOf(answer);

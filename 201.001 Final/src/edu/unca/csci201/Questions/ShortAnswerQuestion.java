@@ -7,11 +7,11 @@ import edu.unca.csci201.Question;
 
 public class ShortAnswerQuestion implements Question{
 	private boolean isAdded = false;
-	String keyphrase = "";
-	String correctAnswer = "This is a open ended question, graded on both a qualitive and quantitive basis.";
-	String text = "";
-	int threshold;
-	String answer = "";
+	private String keyphrase = "";
+	private String correctAnswer = "This is a open ended question, graded on both a qualitive and quantitive basis.";
+	private String text = "";
+	private int threshold;
+	private String answer = "";
 
 	
 	public ShortAnswerQuestion(String text, String keyphrase, int threshold) {
@@ -27,7 +27,6 @@ public class ShortAnswerQuestion implements Question{
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
-
 		this.answer = answer;
 		int i = 0;
 		Pattern p = Pattern.compile( this.keyphrase );

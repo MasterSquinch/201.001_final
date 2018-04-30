@@ -4,10 +4,10 @@ import edu.unca.csci201.Question;
 
 public class MultipleChoiceQuestion implements Question{
 	private boolean isAdded = false;
-	String text = "";
-	String[] answers;
-	String correctAnswer = "";
-	String answer = "";
+	private String text = "";
+	private String[] answers;
+	private String correctAnswer = "";
+	private String answer = "";
 	
 	public MultipleChoiceQuestion(String text, String ... strings ) {
 		this.text = text;
