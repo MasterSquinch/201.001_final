@@ -11,6 +11,7 @@ public class ShortAnswerQuestion implements Question{
 	String correctAnswer = "This is a open ended question, graded on both a qualitive and quantitive basis.";
 	String text = "";
 	int threshold;
+	String answer = "";
 
 	
 	public ShortAnswerQuestion(String text, String keyphrase, int threshold) {
@@ -26,6 +27,8 @@ public class ShortAnswerQuestion implements Question{
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
+
+		this.answer = answer;
 		int i = 0;
 		Pattern p = Pattern.compile( this.keyphrase );
 		Matcher m = p.matcher( answer );
@@ -34,7 +37,7 @@ public class ShortAnswerQuestion implements Question{
 		}
 		if ( this.threshold <= i )
 			return true;
-		return false;
+		return false; 
 	}
 
 	@Override

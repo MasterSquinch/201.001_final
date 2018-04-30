@@ -8,6 +8,8 @@ import java.util.Scanner;
 // import edu.unca.csci201.Questions.*;
 
 public class Quiz {
+	private ArrayList<Question> isIncorrect = new ArrayList<Question>();
+	private ArrayList<String> isIncorrectN = new ArrayList<String>();
 	private DecimalFormat numberFormat = new DecimalFormat(".##");
 	private ArrayList<Question> qList = new ArrayList<Question>();
 	private String[] units = {
@@ -83,11 +85,13 @@ public class Quiz {
 					finalScore = finalScore + s3Weight;
 				}
 			} else {
+				isIncorrect.add(qList.get(i));
+				isIncorrectN.add(Integer.toString(i));
 			}
 		}
-				System.out.println("\n\n\n\n****RESULTS*****\nThe correct answers for the answers which you have answered incorrectly as well as the correct answers you have correctly provided are:\n");
-			for (int i = 0; i < qList.size(); i++){
-				System.out.println(i + ".) " + qList.get(i).getCorrectAnswer());
+				System.out.println("\n\n\n\n****RESULTS*****\nThe correct answers for the answers which you have answered incorrectly but NOT the correct answers you have correctly provided are:\n");
+			for (int i = 0; i < isIncorrect.size(); i++){
+				System.out.println(isIncorrectN.get(i) + ".) "+ isIncorrect.get(i).getCorrectAnswer());
 			}
 				
 			System.out.print("Your final score is " + finalScore);

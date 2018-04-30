@@ -7,6 +7,7 @@ public class TrueFalseQuestion implements Question{
 boolean isTrue;
 String text = "";
 boolean isCorrect;
+String answer = "";
 
 	public TrueFalseQuestion(String text) {
 		this.text = text;
@@ -27,6 +28,8 @@ boolean isCorrect;
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
+		
+		this.answer = answer;
 		if (answer.equalsIgnoreCase("true") || answer.equalsIgnoreCase("false")) {
 		    boolean a = Boolean.valueOf(answer);
 		    if (this.isTrue == a) {
@@ -36,7 +39,7 @@ boolean isCorrect;
 		    }
 		} else {
 		    return false;
-		}
+		} 
 	}
 
 	@Override

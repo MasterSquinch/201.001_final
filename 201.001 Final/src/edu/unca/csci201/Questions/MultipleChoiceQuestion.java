@@ -7,6 +7,7 @@ public class MultipleChoiceQuestion implements Question{
 	String text = "";
 	String[] answers;
 	String correctAnswer = "";
+	String answer = "";
 	
 	public MultipleChoiceQuestion(String text, String ... strings ) {
 		this.text = text;
@@ -42,10 +43,12 @@ public class MultipleChoiceQuestion implements Question{
 
 	@Override
 	public boolean isCorrectAnswer(String answer) {
+
+		this.answer = answer;
 		if (answer.equals(correctAnswer)) {
 			return true;
 		}
-		return false;
+		return false; 
 	}
 
 	@Override
